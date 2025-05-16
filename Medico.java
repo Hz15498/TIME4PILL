@@ -8,9 +8,9 @@ public class Medico extends Usuario {
     private String numeroLicencia;
     private List<Pacientes> pacientes;
 
-    public Medico(String nombreUsuario, String email, String contraseña, 
+    public Medico(String nombreUsuario, String email, String contrasena, 
                  String especialidad, String numeroLicencia,String tipoUsuario) {
-        super(nombreUsuario, contraseña, email, tipoUsuario);
+        super(nombreUsuario, contrasena, email, tipoUsuario);
         this.especialidad = especialidad;
         this.numeroLicencia = numeroLicencia;
         this.pacientes = new ArrayList<>();
