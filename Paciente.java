@@ -8,8 +8,8 @@ class Paciente extends Usuario {
 	    private List<Recordatorio> recordatorios;
 	    private Calendario calendario;
 
-	    public Paciente( String nombreUsuario, String email, String contraseña,String tipoUsuario) {
-	        super(nombreUsuario,contraseña,email, tipoUsuario);
+	    public Paciente( String nombreUsuario, String email, String contrasena,String tipoUsuario) {
+	        super(nombreUsuario,contrasena,email, tipoUsuario);
 	        medicamentos = new ArrayList<>();
 	        recordatorios = new ArrayList<>();
 	        calendario = new Calendario();
