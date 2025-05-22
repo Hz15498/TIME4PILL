@@ -28,11 +28,7 @@ public class Main {
 		System.out.println("Elige una opción:");
         System.out.println("  1) Iniciar sesión");
         System.out.println("  2) Registrarse");
-        System.out.println("  3) Modo invitado");
-        System.out.println("  4) Cambiar idioma");
-        System.out.println("  5) Ayuda / Información Legal");
-        System.out.println("  6) Términos y Política de Privacidad");
-        System.out.println("  7) Más Información\n");
+        System.out.println("  4) Más Información\n");
 
         System.out.println("Introduce el número de la opción y pulsa Enter...");
         
@@ -64,31 +60,16 @@ public class Main {
                 System.out.println("\n Credenciales incorrectas.");
             }
         }
-     
         else if (opcion == 2) {
             System.out.println("\n>> Has seleccionado REGISTRARSE");
             // aquí iría la lógica de registro...
         }
+       
         else if (opcion == 3) {
-            System.out.println("\n>> Has seleccionado MODO INVITADO");
-            // aquí entras en modo invitado...
-        }
-        else if (opcion == 4) {
-            System.out.println("\n>> Has seleccionado CAMBIAR IDIOMA");
-            // aquí muestras el menú de idiomas...
-        }
-        else if (opcion == 5) {
-            System.out.println("\n>> Abriendo AYUDA / INFO LEGAL...");
-            // puedes redirigir a un texto o URL
-        }
-        else if (opcion == 6) {
-            System.out.println("\n>> Mostrando TÉRMINOS y POLÍTICA DE PRIVACIDAD...");
-        }
-        else if (opcion == 7) {
             System.out.println("\n>> Mostrando MÁS INFORMACIÓN...");
         }
         else {
-            System.out.println("\n¡Opción no válida! Reinicia el programa y elige del 1 al 7.");
+            System.out.println("\n¡Opción no válida! Reinicia el programa y elige del 1 al 3.");
         }
         scanner.close();
     }
