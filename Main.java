@@ -62,7 +62,40 @@ public class Main {
         }
         else if (opcion == 2) {
             System.out.println("\n>> Has seleccionado REGISTRARSE");
-            // aquí iría la lógica de registro...
+              System.out.print("Nombre de usuario: ");
+            String nombre = scanner.nextLine();
+            System.out.print("Email: ");
+            String email = scanner.nextLine();
+            System.out.print("Contraseña: ");
+            String pass = scanner.nextLine();
+
+            System.out.println("Tipo de usuario:");
+            System.out.println("1) Paciente");
+            System.out.println("2) Médico");
+            System.out.println("3) Cuidador");
+            System.out.print("Opción: ");
+            int tipo = scanner.nextInt();
+            scanner.nextLine();
+
+            Usuario nuevo = null;
+            if (tipo == 1) {
+                nuevo = new Pacientes(nombre, email, pass);
+            } else if (tipo == 2) {
+                nuevo = new Medicos(nombre, email, pass);
+            } else if (tipo == 3) {
+                nuevo = new Cuidadores(nombre, email, pass);
+            }
+
+            if (nuevo != null) {
+                usuarios.add(nuevo);
+                System.out.println("Usuario registrado exitosamente.");
+            }
+
+        } else {
+            System.out.println("Opción inválida.");
+        }
+
+        JSONManager.guardarUsuarios(usuarios);
         }
        
         else if (opcion == 3) {
