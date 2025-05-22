@@ -1,15 +1,14 @@
 package Time4Pill;
-
 import java.util.ArrayList;
 import java.util.List;
 
-class Paciente extends Usuario {
-	    private List<Medicamento> medicamentos;
+public class Paciente extends Usuario {
+	 private List<Medicamento> medicamentos;
 	    private List<Recordatorio> recordatorios;
 	    private Calendario calendario;
 
-	    public Paciente( String nombreUsuario, String email, String contrasena,String tipoUsuario) {
-	        super(nombreUsuario,contrasena,email, tipoUsuario);
+	    public Paciente( String id,String nombre, String email, String contrasena,String tipoUsuario) {
+	        super(id, nombre,  email,  contrasena, tipoUsuario);
 	        medicamentos = new ArrayList<>();
 	        recordatorios = new ArrayList<>();
 	        calendario = new Calendario();
@@ -17,19 +16,19 @@ class Paciente extends Usuario {
 	    }
 
 	    public void confirmarToma() {
-	        System.out.println(nombreUsuario + " ha confirmado la toma.");
+	        System.out.println(getNombre() + " ha confirmado la toma.");
 	    }
 
 	    public void recibirAlarma() {
-	        System.out.println("Alarma recibida por " + nombreUsuario);
+	        System.out.println("Alarma recibida por " + getNombre());
 	    }
 
 	    public void notificarAlarma() {
-	        System.out.println("Alarma notificada al cuidador desde " + nombreUsuario);
+	        System.out.println("Alarma notificada al cuidador desde " + getNombre());
 	    }
 
 	    public void compararDosis(Usuario receptor) {
-	        System.out.println(nombreUsuario + " compara dosis con " + receptor.nombreUsuario);
+	        System.out.println(getNombre() + " compara dosis con " + receptor.getNombre());
 	    }
 
 	    public Calendario getCalendario() {
@@ -45,5 +44,4 @@ class Paciente extends Usuario {
 	    }
 
 	   
-	}
-
+}
