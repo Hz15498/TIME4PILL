@@ -1,49 +1,44 @@
-package Time4Pill;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class Medico extends Usuario {
-    private String especialidad;
-    private String numeroLicencia;
-    private List<Pacientes> pacientes;
+	   private static final String String = null;
+	   private String especialidad;
+	   private String numeroLicencia;
+	   private List<Paciente> pacientes;
 
-    public Medico(String nombreUsuario, String email, String contrasena, 
-                 String especialidad, String numeroLicencia,String tipoUsuario) {
-        super(nombreUsuario, contrasena, email, tipoUsuario);
-        this.especialidad = especialidad;
-        this.numeroLicencia = numeroLicencia;
-        this.pacientes = new ArrayList<>();
-    }
+	   public Medico(String id, String nombre, String email, String contrasena,String tipoUsuario,String especialidad, String numeroLicencia) {
+	        super( id,  nombre,  email,  contrasena, tipoUsuario);
+	        this.especialidad = especialidad;
+	        this.numeroLicencia = numeroLicencia;
+	        this.pacientes = new ArrayList<>();
+	    }
 
-    // Getters y Setters
-    public String getEspecialidad() {
-        return especialidad;
-    }
+	    // Getters y Setters
+	    public String getEspecialidad() {
+	        return especialidad;
+	    }
 
-    public String getNumeroLicencia() {
-        return numeroLicencia;
-    }
+	    public String getNumeroLicencia() {
+	        return numeroLicencia;
+	    }
+	    public List<Paciente> getPacientes() {
+	        return pacientes;
+	    }
 
-    public List<Pacientes> getPacientes() {
-        return pacientes;
-    }
+	    
+	    public void agregarPaciente(Paciente paciente) {
+	        pacientes.add(paciente);
+	        System.out.println("Paciente " + paciente.getNombre() + " agregado al médico ");
+	    }
 
-    
-    public void agregarPaciente(Pacientes paciente) {
-        pacientes.add(paciente);
-        System.out.println("Paciente " + paciente.getNombreUsuario() + " agregado al médico " + this.nombreUsuario);
-    }
+	    public void prescribirMedicamento(Paciente paciente, Medicamento medicamento, String instrucciones) {
+	        paciente.agregarMedicamento(medicamento);
+	        System.out.println("Medicamento " + medicamento.nombre + " prescrito a " + 
+	                          paciente.getNombre() + " con instrucciones: " + instrucciones);
+	    }
 
-    public void prescribirMedicamento(Pacientes paciente, Medicamento medicamento, String instrucciones) {
-        paciente.agregarMedicamento(medicamento);
-        System.out.println("Medicamento " + medicamento.nombre + " prescrito a " + 
-                          paciente.getNombreUsuario() + " con instrucciones: " + instrucciones);
-    }
-
-    public void verHistorialPaciente(Pacientes paciente) {
-        System.out.println("\nHistorial médico de " + paciente.getNombreUsuario());
-        System.out.println("Medicamentos:");
-        
-    }
+	    public void verHistorialPaciente(Paciente paciente) {
+	        System.out.println("\nHistorial médico de " + paciente.getNombre());
+	        System.out.println("Medicamentos:");
+	    }
 }
